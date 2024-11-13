@@ -1,0 +1,148 @@
+.card {
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  width: 50rem;
+  height: 30rem;
+  background-color: var(--secondary);
+  color: var(--alterante);
+
+  cursor: pointer;
+
+  border-radius: 1rem;
+}
+.card_wrapper {
+  padding: 2rem;
+}
+.card_text {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.card_text span {
+  font-size: 2rem;
+}
+
+/* ?Modal */
+.modal {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.modal_wrapper {
+  padding: 1rem;
+  position: relative;
+  width: fit-content;
+}
+
+.modal_close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 20;
+  font-size: 9rem;
+  color: var(--primary);
+
+  cursor: pointer;
+}
+
+.modal_list {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 9;
+  width: fit-content;
+}
+.modal_list_item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  padding: 2rem;
+  overflow: hidden;
+  width: 70rem;
+  height: calc(33vh - 1rem);
+  background-color: var(--secondary);
+  transition: background-color 0.32s var(--ease);
+
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.modal_list_item_title {
+  font-size: 6.4rem;
+  color: var(--alterante);
+
+  transition: color 0.32s var(--ease);
+}
+.modal_list_item_paragraph {
+  font-size: 2rem;
+  color: var(--alterante);
+
+  transition: transform 0.32s var(--ease), color 0.32s var(--ease);
+  transform: translateY(150%);
+}
+
+.modal_list_item:hover {
+  background-color: orangered;
+  transition: background-color 0.32s var(--ease);
+}
+.modal_list_item:hover .modal_list_item_title {
+  color: var(--secondary);
+  transition: color 0.32s var(--ease);
+}
+.modal_list_item:hover .modal_list_item_paragraph {
+  color: var(--secondary);
+
+  transition: transform 0.32s var(--ease), color 0.32s var(--ease);
+  transform: translateY(0);
+}
+
+.modal_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+/* ?Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.hero_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+}
+.hero_title {
+  font-size: 32rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: calc(100vw / 768 * 10);
+  }
+  .hero_title {
+    font-size: 12rem;
+    text-transform: uppercase;
+  }
+}

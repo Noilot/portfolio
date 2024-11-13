@@ -3,23 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- CSS Setting -->
     <link rel="stylesheet" href="assets/css/reset.scss" />
     <link rel="stylesheet" href="assets/css/style.scss" />
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/css/section.scss" />
+
+    <!-- Javascript Script CDN libraries -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    ></script>
+    <script defer src="assets/js/index.js"></script>
+    <script defer src="assets/js/section.js"></script>
   </head>
   <body>
     <div class="body_wrapper">
-      <nav class="nav">
-        <div class="nav_logo"><span>LOGO</span></div>
-        <div class="nav_menu">
-          <div class="nav_menu_button --open-menu">
-            <div class="nav_menu_button_text">
+      <!-- Header Start -->
+      <header class="header">
+        <div class="header_logo">
+          <span>Noilot</span>
+        </div>
+        <div class="header_menu">
+          <div class="header_menu_button --open-menu">
+            <div class="header_menu_button_text">
               <span>Menu</span>
             </div>
-            <div class="nav_menu_button_circle"></div>
+            <div class="header_menu_button_circle"></div>
           </div>
         </div>
-      </nav>
+      </header>
+      <!-- Header End -->
+
+      <!-- Menu Start -->
       <div class="menu">
         <div class="menu_wrapper">
           <div class="menu_row">
@@ -31,7 +56,7 @@
             </div>
             <div class="menu_row_info">
               <div class="menu_row_info_location">
-                <span>김예진</span>
+                <span>Yejin Kim</span>
                 <span>noilotcy@gmail.com</span>
                 <span>Seoul, Korea</span>
               </div>
@@ -52,12 +77,72 @@
           </div>
         </div>
       </div>
+      <!-- Menu End -->
+
+      <!-- Main Start -->
       <main class="main">
-        <section>페이지1</section>
-        <section>페이지2</section>
-        <section>페이지3</section>
-        <section>페이지4</section>
+        <section class="main_index">페이지1</section>
+        <section class="main_about">페이지2</section>
+        <section class="main_stack">
+          <div class="modal">
+            <div class="modal_wrapper">
+              <div class="modal_close">&#x2715;</div>
+
+              <div class="modal_list">
+                <div class="modal_list_item">
+                  <h2 class="modal_list_item_title">Productivity</h2>
+                  <p class="modal_list_item_paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                    molestiae voluptatum tempora ad ducimus et suscipit possimus
+                    incidunt iste enim? Tenetur ipsam animi ullam facere
+                    pariatur exercitationem iusto culpa nemo?
+                  </p>
+                </div>
+
+                <div class="modal_list_item">
+                  <h2 class="modal_list_item_title">Scalability</h2>
+                  <p class="modal_list_item_paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                    molestiae voluptatum tempora ad ducimus et suscipit possimus
+                    incidunt iste enim? Tenetur ipsam animi ullam facere
+                    pariatur exercitationem iusto culpa nemo?
+                  </p>
+                </div>
+
+                <div class="modal_list_item">
+                  <h2 class="modal_list_item_title">Flexibility</h2>
+                  <p class="modal_list_item_paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+                    molestiae voluptatum tempora ad ducimus et suscipit possimus
+                    incidunt iste enim? Tenetur ipsam animi ullam facere
+                    pariatur exercitationem iusto culpa nemo?
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal_overlay"></div>
+          </div>
+
+          <div class="card">
+            <div class="card_wrapper">
+              <div class="card_text">
+                <span>Discover More</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero">
+            <div class="hero_wrapper">
+              <div class="hero_title">Alliance</div>
+            </div>
+          </div>
+        </section>
+        <section class="main_Portfolio">페이지3</section>
+        <section class="footer">페이지5</section>
       </main>
+      <!-- Main End -->
     </div>
   </body>
 </html>
