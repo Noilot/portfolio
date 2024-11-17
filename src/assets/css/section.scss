@@ -1,15 +1,43 @@
+@font-face {
+  font-family: "Primary";
+  src: url("./fonts/dmsans-medium.woff2") format("woff2"),
+    url("./fonts/dmsans-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --primary: #202020;
+  --secondary: #f5f5f5;
+  --alterante: orangered;
+  --ease: ease-in-out;
+}
+html {
+  font-size: calc(100vw / 1920 * 10);
+}
+body {
+  font-family: "Primary";
+  background-color: var(--primary);
+}
+
+.app {
+  color: var(--secondary);
+}
+
+/* ? Card */
 .card {
+  position: fixed;
   right: 1rem;
   bottom: 1rem;
-  z-index: 10;
   width: 50rem;
   height: 30rem;
+
+  border-radius: 1rem;
   background-color: var(--secondary);
   color: var(--alterante);
 
   cursor: pointer;
-
-  border-radius: 1rem;
+  z-index: 10;
 }
 .card_wrapper {
   padding: 2rem;
@@ -23,60 +51,86 @@
   font-size: 2rem;
 }
 
+.card {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 999;
+  width: 50rem;
+  height: 30rem;
+  background-color: var(--secondary);
+  color: var(--alterante);
+  cursor: pointer;
+  border-radius: 1rem;
+
+  /* 초기 상태 (숨김) */
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* 카드가 보일 때 (애니메이션 효과) */
+.card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ?Modal */
 .modal {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  overflow: hidden;
   position: fixed;
-  top: 0;
   left: 0;
-
-  z-index: 10;
+  top: 0;
   width: 100%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  z-index: 10000;
   pointer-events: none;
+  overflow: hidden;
 }
 .modal_wrapper {
-  padding: 1rem;
   position: relative;
+  padding: 1rem;
   width: fit-content;
 }
 
 .modal_close {
   position: absolute;
-  top: 1rem;
   right: 2rem;
-  z-index: 20;
+  top: 1rem;
   font-size: 9rem;
   color: var(--primary);
 
   cursor: pointer;
+  z-index: 20;
 }
 
 .modal_list {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
   flex-direction: column;
-  z-index: 9;
+  justify-content: flex-start;
   width: fit-content;
+  gap: 1rem;
+  z-index: 9;
 }
 .modal_list_item {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-  padding: 2rem;
-  overflow: hidden;
   width: 70rem;
   height: calc(33vh - 1rem);
+  border-radius: 1rem;
   background-color: var(--secondary);
   transition: background-color 0.32s var(--ease);
 
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   cursor: pointer;
-  border-radius: 1rem;
+  overflow: hidden;
 }
 .modal_list_item_title {
   font-size: 6.4rem;
@@ -87,9 +141,9 @@
 .modal_list_item_paragraph {
   font-size: 2rem;
   color: var(--alterante);
+  transform: translateY(150%);
 
   transition: transform 0.32s var(--ease), color 0.32s var(--ease);
-  transform: translateY(150%);
 }
 
 .modal_list_item:hover {
@@ -102,19 +156,19 @@
 }
 .modal_list_item:hover .modal_list_item_paragraph {
   color: var(--secondary);
+  transform: translateY(0);
 
   transition: transform 0.32s var(--ease), color 0.32s var(--ease);
-  transform: translateY(0);
 }
 
 .modal_overlay {
   position: absolute;
-  top: 0;
   left: 0;
-
-  z-index: -1;
+  top: 0;
   width: 100%;
   height: 100%;
+
+  z-index: -1;
   pointer-events: none;
   cursor: pointer;
 }
@@ -124,13 +178,15 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  z-index: -100;
 }
 .hero_wrapper {
+  width: inherit;
+  height: inherit;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: inherit;
-  height: inherit;
 }
 .hero_title {
   font-size: 32rem;

@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Noilotfolio</title>
 
-    <!-- CSS Setting -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/reset.scss" />
     <link rel="stylesheet" href="assets/css/style.scss" />
+    <link rel="stylesheet" href="assets/css/header.scss" />
+    <link rel="stylesheet" href="assets/css/hero.scss" />
     <link rel="stylesheet" href="assets/css/section.scss" />
 
-    <!-- Javascript Script CDN libraries -->
+    <!-- Javascript CDN libraries -->
     <script
       defer
       src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"
@@ -23,7 +25,14 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
     ></script>
-    <script defer src="assets/js/index.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"
+    ></script>
+
+    <!-- Javascript -->
+    <script defer src="assets/js/menu.js"></script>
+    <script defer src="assets/js/hero.js"></script>
     <script defer src="assets/js/section.js"></script>
   </head>
   <body>
@@ -81,9 +90,35 @@
 
       <!-- Main Start -->
       <main class="main">
-        <section class="main_index">페이지1</section>
-        <section class="main_about">페이지2</section>
-        <section class="main_stack">
+        <section class="hero">
+          <div class="hero_wrapper">
+            <div class="hero_title">
+              <div class="hero_title_row">
+                <h2 class="hero_title_row_text">아진짜뭐적어</h2>
+              </div>
+              <div class="hero_title_row">
+                <h2 class="hero_title_row_text">아진짜뭐적냐고요</h2>
+              </div>
+              <div class="hero_title_row">
+                <h1 class="hero_title_row_text">할말이없어</h1>
+              </div>
+            </div>
+
+            <div class="hero_media">
+              <div class="hero_media_wrapper">
+                <img class="hero_media_image" src="./media/01.png" alt="" />
+                <img class="hero_media_image" src="./media/02.png" alt="" />
+                <img class="hero_media_image" src="./media/03.png" alt="" />
+                <img class="hero_media_image" src="./media/04.png" alt="" />
+                <img class="hero_media_image" src="./media/05.png" alt="" />
+                <img class="hero_media_image" src="./media/06.png" alt="" />
+                <img class="hero_media_image" src="./media/07.png" alt="" />
+                <img class="hero_media_image" src="./media/08.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main_about">
           <div class="modal">
             <div class="modal_wrapper">
               <div class="modal_close">&#x2715;</div>
@@ -139,7 +174,7 @@
             </div>
           </div>
         </section>
-        <section class="main_Portfolio">페이지3</section>
+        <section class="main_Portfolio">페이지4</section>
         <section class="footer">페이지5</section>
       </main>
       <!-- Main End -->

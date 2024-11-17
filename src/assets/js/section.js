@@ -1,23 +1,27 @@
-window.addEventListener("scroll", () => {
-  const section = document.querySelector(".main_stack");
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".main_about");
   const fixedElement = document.querySelector(".card");
 
-  // 섹션의 실제 높이 가져오기 (offsetHeight 사용)
-  const sectionHeight = section.offsetHeight;
+  // Intersection Observer 옵션 설정
+  const observerOptions = {
+    root: null, // 뷰포트를 기준으로 관찰
+    threshold: 0.5, // 섹션의 50%가 보일 때 callback 실행
+  };
 
-  // 현재 뷰포트에서 섹션이 보이는지 확인
-  const sectionRect = section.getBoundingClientRect();
+  // Observer 콜백 함수 설정
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && section.offsetHeight >= window.innerHeight) {
+        fixedElement.classList.add("visible");
+      } else {
+        fixedElement.classList.remove("visible");
+      }
+    });
+  };
 
-  // 섹션의 높이가 100vh 이상이고, 섹션이 뷰포트 안에 있을 때만 요소 표시
-  if (
-    sectionHeight >= window.innerHeight &&
-    sectionRect.top <= window.innerHeight &&
-    sectionRect.bottom >= 0
-  ) {
-    fixedElement.style.display = "block";
-  } else {
-    fixedElement.style.display = "none";
-  }
+  // Intersection Observer 생성 및 섹션 관찰 시작
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  observer.observe(section);
 });
 
 const card = document.querySelector(".card"),
@@ -26,38 +30,34 @@ const card = document.querySelector(".card"),
   modalOverlay = document.querySelector(".modal_overlay"),
   modalItems = document.querySelectorAll(".modal_list_item");
 
-const tl2 = gsap.timeline({ paused: true, defaults: { ease: "expo.inOut" } });
+const t2 = gsap.timeline({ paused: true, defaults: { ease: "expo.inOut" } });
 
 const init2 = () => {
   gsap.set(modalItems, { x: "110%" });
   gsap.set(modalClose, { autoAlpha: 0, scale: 0 });
+  gsap.set(modal, { autoAlpha: 0, pointerEvents: "none" });
 
   initAnimation2();
   addEventListeners2();
 };
 
 const initAnimation2 = () => {
-  tl2
+  t2.to(modal, {
+    duration: 0.5,
+    autoAlpha: 1,
+    pointerEvents: "auto",
+  })
     .to(modalItems, {
       duration: 0.8,
       x: 0,
       stagger: 0.032,
     })
-    .set(modal, { pointerEvents: "auto" })
     .to(
       modalOverlay,
       {
         duration: 1.2,
         backdropFilter: "blur(10px)",
         pointerEvents: "auto",
-      },
-      0
-    )
-    .to(
-      card,
-      {
-        duration: 0.8,
-        x: "110%",
       },
       0
     )
@@ -74,9 +74,19 @@ const initAnimation2 = () => {
 };
 
 const addEventListeners2 = () => {
-  card.addEventListener("click", () => tl2.play());
-  modalClose.addEventListener("click", () => tl2.reverse());
-  modalOverlay.addEventListener("click", () => tl2.reverse());
+  card.addEventListener("click", () => {
+    t2.play();
+  });
+  modalClose.addEventListener("click", () => {
+    t2.reverse().then(() => {
+      gsap.set(modal, { autoAlpha: 0, pointerEvents: "none" }); // 모달을 숨기고 클릭 방지
+    });
+  });
+  modalOverlay.addEventListener("click", () => {
+    t2.reverse().then(() => {
+      gsap.set(modal, { autoAlpha: 0, pointerEvents: "none" }); // 모달을 숨기고 클릭 방지
+    });
+  });
 };
 
 init2();

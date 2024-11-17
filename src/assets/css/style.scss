@@ -1,6 +1,6 @@
 :root {
   --primary: #e4e8ed;
-  --secondary: #191919;
+  --secondary: #b9a1a1;
   --alternate: #d82e2e;
 }
 
@@ -28,8 +28,8 @@ body {
 }
 
 h1 {
-  font-size: 36rem;
-  line-height: 0.6;
+  font-size: 24rem;
+  line-height: 1;
 }
 
 h2 {
@@ -46,147 +46,4 @@ span {
   display: block;
   font-size: 1.8rem;
   line-height: 1.2;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 2.4rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  color: #fff;
-  mix-blend-mode: difference;
-
-  .header_logo span {
-    font-size: 4.8rem;
-    text-transform: uppercase;
-  }
-
-  .header_menu_button {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
-    padding: 2.4rem 4.8rem;
-    background-color: var(--secondary);
-    color: var(--primary);
-    cursor: pointer;
-    border-radius: 20rem;
-
-    .header_menu_button_circle {
-      width: 1.8rem;
-      height: 1.8rem;
-      background-color: var(--alternate);
-      border-radius: 24rem;
-    }
-  }
-}
-
-.menu {
-  padding-top: 6rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 40;
-  width: 100%;
-  height: 100%;
-
-  background-color: var(--secondary);
-  color: var(--primary);
-
-  .menu_wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 6rem;
-    height: inherit;
-
-    .menu_row {
-      display: flex;
-      justify-content: space-between;
-
-      &:nth-child(1) {
-        align-items: flex-start;
-        padding-right: 16rem;
-        padding-left: 48rem;
-      }
-
-      &:nth-child(2) {
-        align-items: flex-end;
-      }
-
-      .menu_row_info {
-        display: flex;
-        gap: 12rem;
-        justify-content: space-between;
-      }
-
-      .menu_row_media {
-        padding: 2rem;
-        width: 50rem;
-        height: 30rem;
-        background-color: var(--primary);
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      .menu_row_title {
-        display: inline-flex;
-      }
-    }
-  }
-}
-
-.main {
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    scroll-snap-align: start;
-
-    &:nth-child(5) {
-      color: #e4e8ed;
-      background-color: #191919;
-      height: 30vh;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html {
-    font-size: max(100vw/768 * 10);
-  }
-
-  h1 {
-    font-size: 20rem;
-  }
-
-  span {
-    font-size: 2.4rem;
-  }
-
-  .menu {
-    padding-top: 18rem;
-
-    .menu_row:nth-child(1) {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    .menu_row_info {
-      display: flex;
-      gap: 2rem;
-      flex-direction: column;
-    }
-  }
 }
