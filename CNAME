@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-npx gh-pages -d build --cname noilot.com
-=======
-npx gh-pages -d build --cname noilot.com
->>>>>>> 5db82fb (Set up GitHub Actions for deployment)
