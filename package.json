@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-    "homepage": "https://noilot.com/"
+    "homepage": "https://noilot.com"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
