@@ -3,11 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - gh-pages
+      - main # ✅ 오직 main 브랜치에 push될 때만 실행되도록 수정
 
 permissions:
-  contents: write # 🔥 반드시 추가! (GitHub Actions가 push할 수 있도록)
+  contents: write # 🔥 GitHub Actions가 gh-pages 브랜치에 push할 수 있도록 설정
 
 jobs:
   deploy:
@@ -27,5 +26,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Vite면 "dist", CRA면 "build"
+          publish_dir: ./dist # ✅ Vite면 "dist", CRA면 "build"
           cname: noilot.com
