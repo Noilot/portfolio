@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # 또는 'master' 브랜치, 사용 중인 브랜치에 맞게 변경
+      - main # main 브랜치에 푸시될 때마다 실행
 
 jobs:
   deploy:
@@ -23,5 +23,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Vite라면 'dist', CRA라면 'build'
-          keep_files: true # 기존 도메인 설정 유지
+          publish_dir: ./dist # Vite라면 "dist", CRA라면 "build"
+          cname: noilot.com
