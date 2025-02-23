@@ -177,9 +177,9 @@ dialog.portfolio_modal.show {
   height: 100%;
 }
 .modal_image {
-  // height: 100vh;
+  width: 36%;
   border-radius: 1rem;
-  object-fit: cover;
+  object-fit: contain;
   // object-position: right center;
 }
 
@@ -189,9 +189,6 @@ dialog.portfolio_modal.show {
   flex-direction: column;
   width: 100%;
   height: 100%;
-}
-
-.modal_title {
 }
 
 .modal_links {
