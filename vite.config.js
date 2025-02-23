@@ -1,6 +1,15 @@
-export default {
+import { defineConfig } from "vite";
+
+export default defineConfig({
   root: "src",
+  base: "/portfolio/",
   build: {
-    outDir: "../public",
+    outDir: "../dist",
+    rollupOptions: {
+      external: [],
+    },
   },
-};
+  optimizeDeps: {
+    exclude: ["node_modules"],
+  },
+});
