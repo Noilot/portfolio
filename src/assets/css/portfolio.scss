@@ -179,7 +179,7 @@ dialog.portfolio_modal.show {
 .modal_image {
   width: 50%;
   border-radius: 1rem;
-  object-fit: contain;
+  object-fit: cover;
   // object-position: right center;
 }
 
