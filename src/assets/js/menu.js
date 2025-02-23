@@ -124,6 +124,15 @@ const addEventListeners = () => {
   });
 };
 
+document.querySelectorAll(".menu_row_pages a").forEach((link) => {
+  link.addEventListener("click", () => {
+    animateButton("Close");
+    animateMenu();
+    tlMenu.reverse(2);
+    isEnabled = false;
+  });
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   initMenu();
   addEventListeners();

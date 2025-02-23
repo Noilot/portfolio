@@ -4,14 +4,22 @@
   font-family: "Primary";
   font-style: normal;
   font-weight: 400;
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
-    format("woff2");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
 }
 
 @font-face {
   font-family: "secondary";
   font-style: normal;
   src: url("../Charlotte.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "alterante";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomMalangMalang-Regular.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
@@ -84,15 +92,50 @@ span {
     scroll-snap-align: start;
 
     &:nth-child(4) {
+      padding: 2rem;
       height: 30vh;
-      background-color: var(--secondary);
-      color: var(--primary);
-    }
+      background: #222;
+      font-size: 0.9rem;
+      color: #fff;
+      text-align: center;
+      .footer_container {
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+      .footer_logo {
+        // letter-spacing: 1.2rem;
+        margin-bottom: 1.2rem;
+        font-size: 3.6rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: "alterante";
+      }
+      .footer_links {
+        display: flex;
+        gap: 2.4rem;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+        padding: 0;
+        list-style: none;
 
-    &:nth-child(5) {
-      height: 30vh;
-      background-color: var(--primary);
-      color: var(--secondary);
+        li {
+          display: inline-block;
+
+          a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: var(--alterante);
+            }
+          }
+        }
+      }
+
+      .footer_copy {
+        opacity: 0.7;
+      }
     }
   }
 }

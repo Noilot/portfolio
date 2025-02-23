@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noilotfolio</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/reset.scss" />
@@ -41,11 +41,11 @@
     ></script>
 
     <!-- Javascript -->
-    <script defer src="assets/js/menu.js"></script>
-    <script defer src="assets/js/intro.js"></script>
-    <script defer src="assets/js/about.js"></script>
-    <script defer src="assets/js/portfolio.js"></script>
-    <script defer src="assets/js/modal.js"></script>
+    <script defer src="assets/js/menu.js" type="module"></script>
+    <script defer src="assets/js/intro.js" type="module"></script>
+    <script defer src="assets/js/about.js" type="module"></script>
+    <script defer src="assets/js/portfolio.js" type="module"></script>
+    <script defer src="assets/js/modal.js" type="module"></script>
   </head>
   <body>
     <div class="body_wrapper">
@@ -81,7 +81,10 @@
                 <span>Seoul, Korea</span>
               </div>
               <div class="menu_row_info_social">
-                <span>Github</span>
+                <span
+                  ><i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/Noilot">Github</a></span
+                >
               </div>
             </div>
           </div>
@@ -228,7 +231,7 @@
           <div class="card">
             <div class="card_wrapper">
               <div class="card_text">
-                <span>좀 더 살펴보기</span>
+                <span>교육 및 자격 상세보기</span>
                 <span>&rarr;</span>
               </div>
             </div>
@@ -262,7 +265,7 @@
               <div class="bento_box" data-project="2">
                 <div class="bento_box_text">
                   <span class="project_info"
-                    >'오늘의 집' 상세 페이지 클론 코딩</span
+                    >클론 코딩 | '오늘의 집' 상세 페이지</span
                   >
                   <span>내일의 집 (2024)</span>
                 </div>
@@ -271,9 +274,9 @@
               <div class="bento_box" data-project="3">
                 <div class="bento_box_text">
                   <span class="project_info"
-                    >'포하임' 기업 페이지 클론 코딩</span
+                    >클론 코딩 | '포메인' 기업 페이지</span
                   >
-                  <span>포하임 (2024)</span>
+                  <span>포메인 (2024)</span>
                 </div>
               </div>
 
@@ -288,16 +291,17 @@
 
               <div class="bento_box" data-project="5">
                 <div class="bento_box_text">
-                  <span class="project_info"
-                    >'맥도날드' 딜리버리 앱 가상 리뉴얼</span
-                  >
-                  <span>맥도날드 (2023)</span>
+                  <span class="project_info">고객 정보 관리 시스템</span>
+                  <span>CRM (2024)</span>
                 </div>
               </div>
 
               <div class="bento_box" data-project="6">
                 <div class="bento_box_text">
-                  <span>그 외</span>
+                  <span class="project_info"
+                    >횡스크롤을 활용한 앨범 컨셉 아트 페이지</span
+                  >
+                  <span>LOST CORNER (2024)</span>
                 </div>
               </div>
             </div>
@@ -312,6 +316,10 @@
                 <div class="modal_infoo">
                   <div class="modal_links"></div>
                   <h2 class="modal_title"></h2>
+                  <div class="modal_contribution">
+                    <div class="bar"></div>
+                    <div class="text"></div>
+                  </div>
                   <p class="modal_stack"></p>
                   <p class="modal_info"></p>
                 </div>
@@ -320,7 +328,17 @@
           </dialog>
         </section>
 
-        <section class="footer">Footer</section>
+        <section class="footer">
+          <div class="footer_container">
+            <div class="footer_logo">Noilot</div>
+            <ul class="footer_links">
+              <li><a href="#intro">INTRO</a></li>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+            </ul>
+            <p class="footer_copy">&copy; 2025 Noilot. All rights reserved.</p>
+          </div>
+        </section>
       </main>
       <!-- Main End -->
     </div>
